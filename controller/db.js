@@ -2,7 +2,7 @@ var mysql = require('mysql');
 var dbConfig = {
 	host     : '127.0.0.1',
 	user     : 'root',
-	password : 'pingguo',
+	password : '123456',
 	database: 'goods'
 }
 exports.query = function(str, fn){
