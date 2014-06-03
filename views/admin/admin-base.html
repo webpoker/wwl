@@ -1,0 +1,45 @@
+{% extends '../base-boot.html' %}
+{% block head %}
+	<link rel="stylesheet" type="text/css" href="/css/admin.css">
+{% endblock %}
+
+{% block content %}
+	<div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">后台管理</a>
+        </div>
+        <div class="navbar-collapse collapse">
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/admin/exit">Exit</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-sm-3 col-md-2 sidebar">
+          <ul class="nav nav-sidebar">
+            <li {%if pageType=="good"%}class="active"{%endif%}><a href="/admin/goods">商品管理</a></li>
+            <li {%if pageType=="about"%}class="active"{%endif%}><a href="#">About us</a></li>
+            <li {%if pageType=="Services"%}class="active"{%endif%}><a href="#">Services</a></li>
+            <li {%if pageType=="Contact"%}class="active"{%endif%}><a href="#">Contact</a></li>
+            <li {%if pageType=="hot"%}class="active"{%endif%}><a href="">hot</a></li>
+            <li {%if pageType=="slide"%}class="active"{%endif%}><a href="">slide</a></li>
+          </ul>
+        </div>
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+          <h1 class="page-header">Dashboard</h1>
+          {%block page-content%}
+          {%endblock%}
+          <!--
+          <h2 class="sub-header">Section title</h2>
+        -->
+        </div>
+      </div>
+    </div>
+{% endblock %}
+
+{% block page_js %}
+{% endblock %}
